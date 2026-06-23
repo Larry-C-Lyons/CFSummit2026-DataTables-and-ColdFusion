@@ -1,0 +1,8 @@
+{
+    "dependencies":{
+        "docbox":"^3.0.0+57"
+    },
+    "installPaths":{
+        "docbox":"docbox/"
+    }
+}

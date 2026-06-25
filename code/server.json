@@ -1,0 +1,22 @@
+{
+    "app":{
+        "cfengine":"adobe@2023"
+    },
+    "name":"dataTables_CF5050",
+    "cfconfig":{
+        "file":"<directory path>/code/dataTables_CFConfig.json"
+    },
+    "web":{
+        "http":{
+            "port":"5050"
+        }
+    },
+    "scripts":{
+        "onServerInitialInstall":"cfpm install adminapi, administrator, axis, ajax, caching, chart, debugger, document, mysql, pdf ,zip"
+    },
+    "jvm":{
+        "args":[
+            "-Dcoldfusion.runtime.remotemethod.matchArguments=false"
+        ]
+    }
+}

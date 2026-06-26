@@ -1,4 +1,4 @@
-{ // adding this for the remote repo
+{
     "app":{
         "cfengine":"adobe@2023"
     },

@@ -1,0 +1,76 @@
+-- Drop and recreate the employees table
+IF OBJECT_ID('dbo.employees', 'U') IS NOT NULL
+    DROP TABLE dbo.employees;
+GO
+
+CREATE TABLE dbo.employees (
+    employee_id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    name NVARCHAR(100) NULL,
+    position NVARCHAR(100) NULL,
+    salary DECIMAL(10,2) NULL,
+    office NVARCHAR(100) NULL,
+    extn INT NULL,
+    start_date DATE NULL
+);
+GO
+
+-- Insert all employees (57 rows)
+INSERT INTO dbo.employees (name, position, salary, office, extn, start_date) VALUES
+('Tiger Nixon', 'System Architect', 320800.00, 'Edinburgh', 5421, '2011-04-25'),
+('Garrett Winters', 'Accountant', 170750.00, 'Tokyo', 8422, '2011-07-25'),
+('Ashton Cox', 'Junior Technical Author', 86000.00, 'San Francisco', 1562, '2009-01-12'),
+('Cedric Kelly', 'Senior Javascript Developer', 433060.00, 'Edinburgh', 6224, '2012-03-29'),
+('Airi Satou', 'Accountant', 162700.00, 'Tokyo', 5407, '2008-11-28'),
+('Brielle Williamson', 'Integration Specialist', 372000.00, 'New York', 4804, '2012-12-02'),
+('Herrod Chandler', 'Sales Assistant', 137500.00, 'San Francisco', 9608, '2012-08-06'),
+('Rhona Davidson', 'Integration Specialist', 327900.00, 'Tokyo', 6200, '2010-10-14'),
+('Colleen Hurst', 'Javascript Developer', 205500.00, 'San Francisco', 2360, '2009-09-15'),
+('Sonya Frost', 'Software Engineer', 103600.00, 'Edinburgh', 1667, '2008-12-13'),
+('Jena Gaines', 'Office Manager', 90560.00, 'London', 3814, '2008-12-19'),
+('Quinn Flynn', 'Support Lead', 342000.00, 'Edinburgh', 9497, '2013-03-03'),
+('Charde Marshall', 'Regional Director', 470600.00, 'San Francisco', 6741, '2008-10-16'),
+('Haley Kennedy', 'Senior Marketing Designer', 313500.00, 'London', 3597, '2012-12-18'),
+('Tatyana Fitzpatrick', 'Regional Director', 385750.00, 'London', 1965, '2010-03-17'),
+('Michael Silva', 'Marketing Designer', 198500.00, 'London', 1581, '2012-11-27'),
+('Paul Byrd', 'Chief Financial Officer (CFO)', 725000.00, 'New York', 3059, '2010-06-09'),
+('Gloria Little', 'Systems Administrator', 237500.00, 'New York', 1721, '2009-04-10'),
+('Bradley Greer', 'Software Engineer', 132000.00, 'London', 2558, '2012-10-13'),
+('Dai Rios', 'Personnel Lead', 217500.00, 'Edinburgh', 2290, '2012-09-26'),
+('Jenette Caldwell', 'Development Lead', 345000.00, 'New York', 1937, '2011-09-03'),
+('Yuri Berry', 'Chief Marketing Officer (CMO)', 675000.00, 'New York', 6154, '2009-06-25'),
+('Caesar Vance', 'Pre-Sales Support', 106450.00, 'New York', 8330, '2011-12-12'),
+('Doris Wilder', 'Sales Assistant', 85600.00, 'Sidney', 3023, '2010-09-20'),
+('Angelica Ramos', 'Chief Executive Officer (CEO)', 1200000.00, 'London', 5797, '2009-10-09'),
+('Gavin Joyce', 'Developer', 92575.00, 'Edinburgh', 8822, '2010-12-22'),
+('Jennifer Chang', 'Regional Director', 357650.00, 'Singapore', 9239, '2010-11-14'),
+('Brenden Wagner', 'Software Engineer', 206850.00, 'San Francisco', 1314, '2011-06-07'),
+('Fiona Green', 'Chief Operating Officer (COO)', 850000.00, 'San Francisco', 2947, '2010-03-11'),
+('Shou Itou', 'Regional Marketing', 163000.00, 'Tokyo', 8899, '2011-08-14'),
+('Michelle House', 'Integration Specialist', 95400.00, 'Sidney', 2769, '2011-06-02'),
+('Suki Burks', 'Developer', 114500.00, 'London', 6832, '2009-10-22'),
+('Prescott Bartlett', 'Technical Author', 145000.00, 'London', 3606, '2011-05-07'),
+('Gavin Cortez', 'Team Leader', 235500.00, 'San Francisco', 2860, '2008-10-26'),
+('Martena Mccray', 'Post-Sales support', 324050.00, 'Edinburgh', 8240, '2011-03-09'),
+('Unity Butler', 'Marketing Designer', 85675.00, 'San Francisco', 5384, '2009-12-09'),
+('Howard Hatfield', 'Office Manager', 164500.00, 'San Francisco', 7031, '2008-12-16'),
+('Hope Fuentes', 'Secretary', 109850.00, 'San Francisco', 6318, '2010-02-12'),
+('Vivian Harrell', 'Financial Controller', 452500.00, 'San Francisco', 9422, '2009-02-14'),
+('Timothy Mooney', 'Office Manager', 136200.00, 'London', 7580, '2008-12-11'),
+('Jackson Bradshaw', 'Director', 645750.00, 'New York', 1042, '2008-09-26'),
+('Olivia Liang', 'Support Engineer', 234500.00, 'Singapore', 2120, '2011-02-03'),
+('Bruno Nash', 'Software Engineer', 163500.00, 'London', 6222, '2011-05-03'),
+('Sakura Yamamoto', 'Support Engineer', 139575.00, 'Tokyo', 9383, '2009-08-19'),
+('Thor Walton', 'Developer', 98540.00, 'New York', 8327, '2013-08-11'),
+('Finn Camacho', 'Support Engineer', 87500.00, 'San Francisco', 2927, '2009-07-07'),
+('Serge Baldwin', 'Data Coordinator', 138575.00, 'Singapore', 8352, '2012-04-09'),
+('Zenaida Frank', 'Software Engineer', 125250.00, 'New York', 7439, '2010-01-04'),
+('Zorita Serrano', 'Software Engineer', 115000.00, 'San Francisco', 4389, '2012-06-01'),
+('Jennifer Acosta', 'Junior Javascript Developer', 75650.00, 'Edinburgh', 3431, '2013-02-01'),
+('Cara Stevens', 'Sales Assistant', 145600.00, 'New York', 3990, '2011-12-06'),
+('Hermione Butler', 'Regional Director', 356250.00, 'London', 1016, '2011-03-21'),
+('Lael Greer', 'Systems Administrator', 103500.00, 'London', 6733, '2009-02-27'),
+('Jonas Alexander', 'Developer', 86500.00, 'San Francisco', 8196, '2010-07-14'),
+('Shad Decker', 'Regional Director', 183000.00, 'Edinburgh', 6373, '2008-11-13'),
+('Michael Bruce', 'Javascript Developer', 183000.00, 'Singapore', 5384, '2011-06-27'),
+('Donna Snider', 'Customer Support', 112000.00, 'New York', 4226, '2011-01-25');
+GO
